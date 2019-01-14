@@ -22,7 +22,7 @@ import Layout from '../views/layout/Layout'
   }
 **/
 export const constantRouterMap = [
-  { path: '/login', component: () => import('@/views/login/index'), hidden: true },
+  { path: '/login', component: () => import('@/views/login/login'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },
 
   {
@@ -221,6 +221,18 @@ export const constantRouterMap = [
       {
         path: '/pics',
         component: () => import('@/views/pics/pics'),
+        // meta: { title: '创建文章', icon: 'link' }
+      }
+    ]
+  },
+
+  {
+    path: '/additem',
+    component: Layout,
+    children: [
+      {
+        path: '/additem',
+        component: () => import('@/views/additem/additem'),
         // meta: { title: '创建文章', icon: 'link' }
       }
     ]
